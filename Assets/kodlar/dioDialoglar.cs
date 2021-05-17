@@ -8,8 +8,7 @@ public class dioDialoglar : MonoBehaviour
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
     private int index;
-    public Sprite dialogGorsel;
-    public Image img;
+
     private void Start()
     {
        // StartCoroutine(Type());
@@ -22,8 +21,7 @@ public class dioDialoglar : MonoBehaviour
     }
     IEnumerator Type()
     {
-        img.enabled = true;
-        img.sprite = dialogGorsel;
+       
         textDisplay.enabled = true;
         index = Random.Range(0, sentences.Length);
         foreach(char letter in sentences[index].ToCharArray())
@@ -34,7 +32,7 @@ public class dioDialoglar : MonoBehaviour
         yield return new WaitForSeconds(1f);
         textDisplay.text = "";
         textDisplay.enabled = false;
-        img.enabled = false;
+        
     }
 
    

@@ -98,10 +98,15 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\VHS\Scripts\VHSPostProcessEffect.cs" />
     <Compile Include="Assets\kodlar\canbari.cs" />
+    <Compile Include="Assets\kodlar\dialogTrigger.cs" />
     <Compile Include="Assets\kodlar\dioDialoglar.cs" />
     <Compile Include="Assets\kodlar\dusmanHareket.cs" />
+    <Compile Include="Assets\kodlar\karakterDialog.cs" />
     <Compile Include="Assets\kodlar\karakterHareket.cs" />
+    <Compile Include="Assets\kodlar\mainMenuScript.cs" />
+    <Compile Include="Assets\kodlar\pauseMenuScript.cs" />
     <Compile Include="Assets\kodlar\silahScript.cs" />
     <None Include="Assets\spritefont_and_other\document_and_picturelist\readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -120,6 +125,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\VHS\Shaders\VHSPostProcessEffect.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />

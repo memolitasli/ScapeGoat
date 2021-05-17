@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class karakterHareket : MonoBehaviour
 {
     public float speed;
@@ -19,8 +19,8 @@ public class karakterHareket : MonoBehaviour
     public Animator animator;
     public canbari canbari;
     public int maxCan = 100;
-    public string[] dioSozleri;
-    
+    public GameObject karakterDialogManager;
+    public GameObject[] triggers;
    
 
     // startmetodu program çalışğı anda çalışır. Başlangıçta olacak olan değerleri atamak için kullanıyorum
@@ -36,6 +36,11 @@ public class karakterHareket : MonoBehaviour
     ile temas edip etmediğini kontrol etmek için fixedUpdate metodunu kullanıyorum*/
     void Update()
     {
+        if(maxCan <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         // karakterim layer etiketi zemin olan nesnelerle temas halinde ise yapabileceği zıplama sayısını sabit bir değere eşitliyorum
         if (karakterYerdemi == true)
         {
@@ -94,8 +99,40 @@ public class karakterHareket : MonoBehaviour
 
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.tag == "yapiskanZemin")
+        {
+            speed = 2f;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        speed = 5f;
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
+
+        if(col.tag == "dialog")
+        {
+            int i = 0;
+            for(i = 0; i < triggers.Length; i++)
+            {
+                if(col.gameObject == triggers[i])
+                {
+                    break;
+                }
+            }
+            karakterDialog dialog = karakterDialogManager.GetComponent<karakterDialog>();
+            dialog.cumleOlustur(i);
+            Destroy(col.gameObject);
+        }
+        if(col.tag == "nextLevelTrigger")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+        }
+
         if (col.tag == "dusman")
         {
             Debug.Log("Dusman ile Temas Gerceklesti");
@@ -105,7 +142,10 @@ public class karakterHareket : MonoBehaviour
 
 
         }
-
+        if(col.tag == "dususNoktasi")
+        {
+            //bolumu tekrar baslat
+        }
 
         if (col.tag == "siringa")
         {
@@ -134,6 +174,7 @@ public class karakterHareket : MonoBehaviour
             maxCan -= 40;
             canbari.setHealth(maxCan);  
         }
+      
         if(col.tag == "oyunuDurdur")
         {
             Time.timeScale = 0f;

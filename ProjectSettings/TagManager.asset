@@ -10,6 +10,12 @@ TagManager:
   - oyunuDurdur
   - balta
   - tuzak
+  - dialog1
+  - dususNoktasi
+  - yapiskanZemin
+  - bos
+  - dialog
+  - nextLevelTrigger
   layers:
   - Default
   - TransparentFX

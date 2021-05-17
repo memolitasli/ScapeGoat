@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class dusmanHareket : MonoBehaviour
 {
@@ -15,9 +16,12 @@ public class dusmanHareket : MonoBehaviour
     public int maxCan = 100;
     public GameObject patlamaEfekti;
     public Animator anim;
-    public Animator camAnim;
-    public GameObject dialogManager;
+      
     public Collider2D zeminCollider;
+    public Rigidbody2D rb;
+    public TextMeshProUGUI textDisplay;
+    public string sentences;
+    private int index;
 
     private void Start()
     {
@@ -60,14 +64,25 @@ public class dusmanHareket : MonoBehaviour
                 movingRight = true;
             }
         }
+
         if (bodyCollider.IsTouchingLayers(dusmanLayer))
         {
-            GameObject[] otherObject = GameObject.FindGameObjectsWithTag("dusman");
-            foreach (GameObject obj in otherObject)
-            {
-                Physics2D.IgnoreCollision(obj.GetComponent<BoxCollider2D>(), gameObject.GetComponent<BoxCollider2D>());
-            }
+            //StartCoroutine(flip());
+        }
 
+
+        if (bodyCollider.IsTouchingLayers(karakterLayer))
+        {
+            //saldırı animasyonunu oynat
+            anim.SetBool("temas", true);
+        }
+
+
+
+    }
+
+    IEnumerator flip()
+    {
             if (movingRight == true)
             {   //karakterin sprite'ini 180 derece çeviriyorum ve sol tarafa hareket ettiriyorum
                 transform.Rotate(0, -180, 0);
@@ -80,28 +95,44 @@ public class dusmanHareket : MonoBehaviour
                 transform.Rotate(0, 180, 0);
                 movingRight = true;
             }
-        }
-        if (bodyCollider.IsTouchingLayers(karakterLayer))
-        {
-            //saldırı animasyonunu oynat
-            anim.SetBool("temas", true);
-        }
-
-
-
+        
+        yield return new WaitForSeconds(1f);
     }
     public void hasarAl(int hasar)
     {
         maxCan = maxCan - hasar;
         if (maxCan <= 0)
         {
-            dioDialoglar dio = dialogManager.GetComponent<dioDialoglar>();
-            dio.cumleOlustur();
             Destroy(this.gameObject);
             StartCoroutine(patlamaOynat());
+            /*dioDialoglar dio = dialogManager.GetComponent<dioDialoglar>();
+            dio.cumleOlustur();
+            */
+            cumleOlustur();
 
         }
     }
+
+    public void cumleOlustur()
+    {
+            textDisplay.text = "";
+            StartCoroutine(Type());
+        
+
+    }
+    IEnumerator Type()
+    {
+
+        textDisplay.enabled = true;
+
+        textDisplay.text = sentences;
+        yield return new WaitForSeconds(2f);
+        textDisplay.text = "";
+        textDisplay.enabled = false;
+
+    }
+
+
 
     IEnumerator patlamaOynat()
     {
@@ -116,7 +147,23 @@ public class dusmanHareket : MonoBehaviour
         {
             anim.SetBool("temas", true);
         }
-       
+        if(col.tag == "dusman")
+        {
+            if (movingRight == true)
+            {   //karakterin sprite'ini 180 derece çeviriyorum ve sol tarafa hareket ettiriyorum
+                transform.Rotate(0, -180, 0);
+                movingRight = false;
+                rb.velocity = Vector2.right * 5;
+            }
+            else
+            {
+                //sol tarafta ens ona geldi ise
+                transform.Rotate(0, 180, 0);
+                movingRight = true;
+                rb.velocity = Vector2.right * 5;
+            }
+        }
+     
 
     }
    

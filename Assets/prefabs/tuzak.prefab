@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1248255988978618592}
   - component: {fileID: 1248255988978618593}
   - component: {fileID: 1248255988978618594}
+  - component: {fileID: 5434427789961553797}
   - component: {fileID: 1248255988978618595}
   m_Layer: 0
   m_Name: tuzak
@@ -199,6 +200,18 @@ PolygonCollider2D:
       - {x: 0.5, y: -0.39999998}
       - {x: 0.52, y: -0.32999998}
       - {x: 0.53999996, y: -0.14}
+--- !u!114 &5434427789961553797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248255988978618596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395efd2ce22993440af058f4ffd7c3ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1248255988978618595
 Animator:
   serializedVersion: 3
@@ -209,7 +222,7 @@ Animator:
   m_GameObject: {fileID: 1248255988978618596}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9cb8a14242a01b140b714488c67c16c1, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

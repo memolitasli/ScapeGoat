@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3439945217782386401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3439945217782386403}
+  - component: {fileID: 3439945217782386402}
+  m_Layer: 0
+  m_Name: hikayeDialogManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3439945217782386403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3439945217782386401}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 493.05225, y: 201.94241, z: -258.7125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3439945217782386402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3439945217782386401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb4e26647da588644b51bbab659a87ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yazi:
+  - Savasin uzerinden 15 yil gecti, gezegenin uzerinde gezinen insanlik adindaki
+    veba neredeyse yok oldu. Kalanlar ise harabeler arasinda birbirlerini yok etmeye
+    devam ediyor. Disarida canavarlar kol geziyor , gezegen yasanamaz hale geldi
+    peki ya bu salaklar ne yapiyor ? birbirlerini olduruyorlar. Manzarasi daha guzel
+    bir harabe icin hemde. Bakin burada bir hayatta kalan var , hadi onu izleyelim.
+  - "Atesin catirdamasi\u2026."
+  - 'lemmy: sana soylemistim degil mi , tuzak oldugunu soyledim ama sen ne yaptin
+    ? guzel bir Kadin gordun ve tum mantigini cope attin, az kalsin olecektik senin
+    yuzunden'
+  - "dio: \u2026.."
+  - 'lemmy: seni neden dinliyorum ki zaten anca basimizi derde sok baska bir ise
+    yarama, anca kafamin icerisinde gurultu cikart.'
+  - 'Dio: en azindan yiyecek etimiz oldu , kotu mu o kadar ? '
+  - 'Lemmy: yaani, ama soylemem lazim , o siskonun eti biraz fazla yagliymis , kolestrolumuz
+    cikacak canavarlar yuzunden degil , kalp krizinden olecegiz.'
+  - "Dio: kendin sectin , ben sana balik etliyi alalim demistim. Sen ille de dobiskoyu
+    alal\u0131m 2 haftalik etimiz olur dedin."
+  - 'Lemmy: artik gidip marketten yiyecek almak gibi bir luksumuz yok malesef. Ne
+    bulursak onu yiyecegiz.'
+  - 'Dio: haklisin, en azindan bir daha bizi rahatsiz etmezler, yalniz soylemem lazim
+    baltayi adamin kafasina caktiktan sonra direkt adami isirman bebeleri iyi korkutmustur
+    hahahaha ben bile bu kadar yaratici olamazdim.'
+  - '*******Boooooom ******'
+  - 'Lemmy: noluyor lan ?!'
+  - 'Dio : alcak herifler , kapiyi patlattilar , cabuk alabildigin eti al ve kacalim,
+    kalanlarini daha sonra arkadaslarinin yanina yollariz.'
+  textDisplay: {fileID: 0}

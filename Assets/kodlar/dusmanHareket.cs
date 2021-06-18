@@ -16,20 +16,24 @@ public class dusmanHareket : MonoBehaviour
     public int maxCan = 100;
     public GameObject patlamaEfekti;
     public Animator anim;
-      
+    
     public Collider2D zeminCollider;
     public Rigidbody2D rb;
     public TextMeshProUGUI textDisplay;
     public string sentences;
     private int index;
-
+    float sesOynatmaSuresi;
     private void Start()
     {
      
     }
 
+
     private void Update()
     {
+       
+       
+
         //Düşman karakterin konumunu değiştiriyorum 
         transform.Translate(Vector2.right * speed * Time.deltaTime);
         RaycastHit2D yerBilgisi = Physics2D.Raycast(yerKontrol.position, Vector2.down, mesafe);
@@ -103,12 +107,12 @@ public class dusmanHareket : MonoBehaviour
         maxCan = maxCan - hasar;
         if (maxCan <= 0)
         {
+            
+            camShake.Instance.shakeCamera(5f, 0.1f);
             Destroy(this.gameObject);
             StartCoroutine(patlamaOynat());
-            /*dioDialoglar dio = dialogManager.GetComponent<dioDialoglar>();
-            dio.cumleOlustur();
-            */
-            cumleOlustur();
+            FindObjectOfType<muzikManager>().playSound("yaratikSesi");
+
 
         }
     }

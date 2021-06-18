@@ -237,6 +237,8 @@ MonoBehaviour:
   maxCan: 100
   karakterDialogManager: {fileID: 0}
   triggers: []
+  kapanisEfekti: {fileID: 8447499120878660779, guid: af28b36815af2ea43b19682c8369ce1e,
+    type: 3}
 --- !u!114 &2941689751503430893
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class pauseMenuScript : MonoBehaviour
 {
+
+    public AudioMixer audiomixer;
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
+    public void setVolume(float volume)
+    {
+        audiomixer.SetFloat("volume", volume);
+    }
 
 
     private void Update()
@@ -23,7 +30,17 @@ public class pauseMenuScript : MonoBehaviour
                 oyunuDurdur();
             }
         }
-
+        if(gameIsPaused && Input.GetKeyDown(KeyCode.R))
+        {
+            devamEt();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        if (gameIsPaused && Input.GetKeyDown(KeyCode.Q))
+        {
+            devamEt();
+            oyunuKapat();
+            
+        }
     }
     public void devamEt()
     {
@@ -41,6 +58,7 @@ public class pauseMenuScript : MonoBehaviour
         Debug.Log("Bolum Bastan Baslatiliyor");
         devamEt();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
         
     }
     public void oyunuKapat()
@@ -48,6 +66,7 @@ public class pauseMenuScript : MonoBehaviour
         Time.timeScale = 1f;
         Debug.Log("Oyun Kapatıldı"); 
         Application.Quit();
+        
     }
 
 }

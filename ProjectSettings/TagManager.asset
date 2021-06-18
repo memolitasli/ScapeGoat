@@ -16,6 +16,9 @@ TagManager:
   - bos
   - dialog
   - nextLevelTrigger
+  - siringa
+  - dayi
+  - finito
   layers:
   - Default
   - TransparentFX

@@ -17,6 +17,32 @@ public class karakterDialog : MonoBehaviour
             StartCoroutine(Type(index));
         }
     }
+
+    public void odCumleleriOlustur(string cumle)
+    {
+        if (textDisplay.text == "")
+        {
+            StartCoroutine(odCumleOl(cumle));
+        }
+    }
+
+
+    IEnumerator odCumleOl(string cumle)
+    {
+       
+        
+        textDisplay.enabled = true;
+        foreach (char letter in cumle.ToCharArray())
+        {
+            textDisplay.text += letter;
+            yield return new WaitForSeconds(0.02f);
+        }
+        yield return new WaitForSeconds(1f);
+        textDisplay.text = "";
+
+    }
+
+
     IEnumerator Type(int index)
     {
       

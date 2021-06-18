@@ -16,6 +16,9 @@ public class silahScript : MonoBehaviour
     }
     IEnumerator atesEt()
     {
+
+        FindObjectOfType<muzikManager>().playSound("atesEtmeSesi");
+
         RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, firePoint.right);
         if (hitInfo)
         {
